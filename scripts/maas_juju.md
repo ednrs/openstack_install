@@ -27,7 +27,7 @@ cat ~/admin-api-key
 qjtBFhH5JJxkjP9Lhy:JK4h8Vru3Bk7aWAb8n:AjrEdTkzEgEJAVRYc2qaruBdvXPb3qx7
 
 ## Register Juju Cloud and Controller
-
+```
 cat << EOF >  maas-cloud.yaml
 clouds:
   maas-one:
@@ -35,7 +35,7 @@ clouds:
     auth-types: [oauth1]
     endpoint: http://10.6.0.10:5240/MAAS
 EOF
-
+```
 juju add-cloud --client -f maas-cloud.yaml maas-one
 
 ## Add credential for Juju to MAAS
