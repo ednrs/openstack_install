@@ -47,3 +47,18 @@ Internal and external DNS
 ## Subnets
 ![](/scripts/images/subnets.png)
 
+
+## Machines added
+![](/scripts/images/machines.png)
+
+## Machine (node1) overview 
+![](/scripts/images/node1.png)
+
+## Machine's (node1) network 
+Bond + Open vSwitch
+![](/scripts/images/network.png)
+
+
+## Machine's (node1) storage
+![](/scripts/images/storage_machine.png)
+
