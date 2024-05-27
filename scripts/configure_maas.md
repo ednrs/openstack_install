@@ -15,5 +15,6 @@ Storage configuration - LVM Layout
 Internal and external DNS
 ![](/scripts/images/dns.png)
 
-
+## Subnets
+![](/scripts/images/subnets.png)
 
