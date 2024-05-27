@@ -1,5 +1,6 @@
 # MAAS Configuration
-
+## Image to download and sync in MAAS repository
+![](/scripts/images/image.png)
 ## Settings
 ### Commissioning
 The commisionning image
@@ -12,6 +13,7 @@ Storage configuration - LVM Layout
 ![](/scripts/images/storage.png)
 ### DNS
 Internal and external DNS
-![](/scripts/images/commidns.png)
+![](/scripts/images/dns.png)
+
 
 
