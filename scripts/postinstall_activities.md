@@ -63,3 +63,15 @@ Get the admin password
 juju exec --unit keystone/leader leader-get admin_passwd
 ```
 and authenticate with user ```admin``` on domain ```admin_domain```
+
+## Storage CEPH Pool
+Create ceph pool of type RDB and share it within hypervisors of Nova service.
+```
+juju config nova-compute libvirt-image-backend=rbd
+juju config nova-compute rbd-pool=cinder-ceph
+```
+## Configure protocol of the Nova console
+```
+juju config nova-cloud-controller console-access-protocol=spice
+```
+With this you finished the basic confguration of the OpenStack services.
