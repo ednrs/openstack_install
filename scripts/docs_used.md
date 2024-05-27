@@ -18,5 +18,6 @@ The How-to containes following three main chapters describing the deployment of 
 
 ### Installing Juju Bundles
 [Juju Bundles](https://juju.is/docs/juju/bundle)
+
 [Github Repositories of OpenStack Bundles](https://github.com/openstack-charmers/openstack-bundles)
 
