@@ -1,4 +1,5 @@
 # Ansible script for Virtual machines set-up
+```
 - hosts: pmx
   tasks:
     - name: Create Juju Controller
@@ -71,5 +72,5 @@
         net: {"net0":"virtio=BC:24:11:AB:A6:12,bridge=vmbr0,firewall=0","net1":"virtio=BC:24:11:AB:A6:22,bridge=vmbr0,firewall=0"}
         boot: "order=net0;virtio0"
         state: present
-
+```
       
