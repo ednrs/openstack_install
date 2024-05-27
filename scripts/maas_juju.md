@@ -33,6 +33,14 @@ cat ~/admin-api-key
 ```
 qjtBFhH5JJxkjP9Lhy:JK4h8Vru3Bk7aWAb8n:AjrEdTkzEgEJAVRYc2qaruBdvXPb3qx7
 ```
+#### Credentials
+```
+passwd: 
+YJW59c+FK7h/2dQW240kBg==
+admin-api-key: 
+qjtBFhH5JJxkjP9Lhy:JK4h8Vru3Bk7aWAb8n:AjrEdTkzEgEJAVRYc2qaruBdvXPb3qx7
+```
+
 ## Register Juju Cloud and Controller
 ```
 cat << EOF >  maas-cloud.yaml
