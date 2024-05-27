@@ -1,6 +1,6 @@
 # Install Openstack with bundle and overlay
 
-## Bootrap JUJU
+## Boostrap JUJU
 ```
 juju bootstrap --bootstrap-series=jammy --constraints tags=juju maas-one maas-controller
 ```
