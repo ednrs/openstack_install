@@ -48,3 +48,18 @@ And save the results somvewhere in some file.
 | 85fe3e8da9f445819f6b6e6b22b50f50 | RegionOne | cinderv3     | volumev3        | True    | admin     | https://10.6.0.17:8776/v3/$(tenant_id)s |
 | dc09beff6812427b90c845567d2e71c8 | RegionOne | glance       | image           | True    | admin     | https://10.6.0.24:9292                  |
 | ec684fe0ff9548129d7a5ff622774b90 | RegionOne | nova         | compute         | True    | admin     | https://10.6.0.16:8774/v2.1             |            |
+
+## Access admin OpenStack Dashboard
+Get the address of the dashboard
+```
+juju status --format=yaml openstack-dashboard | grep public-address | awk '{print $2}' | head -1
+```
+Open Horizon dahboard
+```
+https://10.6.0.32/horizon
+```
+Get the admin password
+```
+juju exec --unit keystone/leader leader-get admin_passwd
+```
+and authenticate with user ```admin``` on domain ```admin_domain```
