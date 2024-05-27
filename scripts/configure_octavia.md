@@ -1,4 +1,9 @@
 # Configure Octavia loadbalancer service
+## Configure Neutron ML2 security
+```
+juju config neutron-api enable-ml2-port-security=True
+```
+
 In order to configure Octavia with its own certificates and password ```foobar``` execute the following commands:
 
 ## Create Octavia keys
