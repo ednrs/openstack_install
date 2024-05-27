@@ -10,6 +10,7 @@
 ![](/scripts/images/pmx.png)
 ## Network configuration
 OVS Bridge (vmbr0) configured with the file ```/etc/network/interfaces``` with 5 internal vlans and one external network (outside).
+Four 1GB ports (eno1..3) and two 10GB ports (ens1f0 and ens1f1). Only ens1f0 is added to the bridge.
 ```
 auto lo
 iface lo inet loopback
@@ -92,5 +93,7 @@ Additional iptabbles rules
 iptables -t nat -A POSTROUTING -o vmbr0 -j MASQUERADE
 iptables -t nat -A POSTROUTING -j MASQUERADE
 ```
-
 ![](/scripts/images/pmx_network.png)
+## Virtual machines hardware
+![](/scripts/images/pmx_hardware.png)
+
