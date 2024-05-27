@@ -27,13 +27,13 @@ watch -c juju status vault keystone neutron-api nova-cloud-controller --color
 ## Unlock the vault
 **NB:!!!** Save all vault tokens and other results and do not lose them! Otherwise you will be not able to start OpenStack after shutdown, restart or outage.
 
-When ```nova-cloud-controller``` and ```keystone``` became active and idle unseal the wault with following commands:
+When ```nova-cloud-controller``` and ```keystone``` became active and idle unseal the vault with following commands:
 
 Set address of the vault as environment variable (get the address of the vault from ```juju status```
 ```
 export VAULT_ADDR="http://10.6.0.25:8200"
 ```
-Initiate vault with five keys (three main and two reserve eys)
+Initiate vault with five keys (three main and two backup keys)
 ```
 vault operator init -key-shares=5 -key-threshold=3
 ```
@@ -73,37 +73,6 @@ juju run vault/leader generate-root-ca
 ```
 Save the results and wait untill **ALL** services shown in ```juju status``` became active and idle (except ```octavia``` and ```glance-simplestreams-sync```)
 ```
-## Set Address and Port
-### Ge it from juju status
-export VAULT_ADDR="http://10.6.0.25:8200"
-
-## Initialise
-vault operator init -key-shares=5 -key-threshold=3
-
-## Keys use
-export VAULT_ADDR="http://10.6.0.13:8200"
-vault operator unseal Q70dkoSAxW/Sko6kOhSJVRGfenEFGdFIvu/6LooYNQaT
-vault operator unseal 1SUIidMByFjV8m/6MJRcCpPKxvJkb35fxDBuj3fZHBSb
-vault operator unseal J+73FQD55he0wy8rd7qWBnTtqeDbOiArNGujhCrW3Amt
-
-Unseal Key 4: zDgrc23uQaw7D7hzmda1AT/+7wdXwR4GFVCsfd98+2zU
-Unseal Key 5: ET0eVCbslSg8OfgtBSFkF3744GYLt8me0K5T/kp9cTCU
-
-Initial Root Token: s.IwKiZaABJhKZDLpaRhOTXioo
-
-## Generate a root token with a limited lifetime (10 minutes here) using the initial root token:
-export VAULT_TOKEN=s.IwKiZaABJhKZDLpaRhOTXioo
-vault token create -ttl=20m
-
-token                s.1LyBALR4tms9h6NYJjHXDNfw
-token_accessor       2XRftrvnNHdw794YY6Y7HO5d
-
-## Authorise the vault charm
-juju run vault/leader authorize-charm token=s.1LyBALR4tms9h6NYJjHXDNfw
-
-## Add a CA certificate
-juju run vault/leader generate-root-ca
-
 output: |-
   -----BEGIN CERTIFICATE-----
   MIIDazCCAlOgAwIBAgIUUCngwSqISGxyyHXSbB0jabfsaXwwDQYJKoZIhvcNAQEL
