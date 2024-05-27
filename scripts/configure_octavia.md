@@ -47,7 +47,7 @@ juju config octavia \
     lb-mgmt-controller-cert="$(base64 controller_cert_bundle.pem)"
 ```
 ## Configure resources
-**NB!!!** Patiantly wait untill ```watch -c juju status octavia --color``` became active and idle and "Unit is ready"
+**NB!!!** Patiently wait untill ```watch -c juju status octavia --color``` became active, idle and the "Unit is ready"
 ```
 juju run octavia/0 configure-resources
 ```
