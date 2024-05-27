@@ -34,9 +34,9 @@ Get the endpoints of OpenStack services.
 openstack endpoint list --interface admin
 ```
 And save the results somvewhere in some file.
-+----------------------------------+-----------+--------------+-----------------+---------+-----------+-----------------------------------------+
-| ID                               | Region    | Service Name | Service Type    | Enabled | Interface | URL                                     |
-+----------------------------------+-----------+--------------+-----------------+---------+-----------+-----------------------------------------+
+
+| ID | Region | Service Name | Service Type | Enabled | Interface | URL |
+
 | 16fbc2a771e6481f9a3ec9d75032ffa2 | RegionOne | swift        | object-store    | True    | admin     | https://10.6.0.28:443/swift             |
 | 2b65fdbeb86b4446a135aecfec5990f5 | RegionOne | s3           | s3              | True    | admin     | https://10.6.0.28:443/                  |
 | 4ca4ac444415427787164dfa5e938ad3 | RegionOne | neutron      | network         | True    | admin     | https://10.6.0.34:9696                  |
