@@ -36,10 +36,9 @@ openstack endpoint list --interface admin
 And save the results somvewhere in some file.
 
 | ID | Region | Service Name | Service Type | Enabled | Interface | URL |
-
-| 16fbc2a771e6481f9a3ec9d75032ffa2 | RegionOne | swift        | object-store    | True    | admin     | https://10.6.0.28:443/swift             |
-| 2b65fdbeb86b4446a135aecfec5990f5 | RegionOne | s3           | s3              | True    | admin     | https://10.6.0.28:443/                  |
-| 4ca4ac444415427787164dfa5e938ad3 | RegionOne | neutron      | network         | True    | admin     | https://10.6.0.34:9696                  |
+| 16fbc2a771e6481f9a3ec9d75032ffa2 | RegionOne | swift        | object-store    | True    | admin     | https://10.6.0.28:443/swift |
+| 2b65fdbeb86b4446a135aecfec5990f5 | RegionOne | s3           | s3              | True    | admin     | https://10.6.0.28:443/ |
+| 4ca4ac444415427787164dfa5e938ad3 | RegionOne | neutron      | network         | True    | admin     | https://10.6.0.34:9696 |
 | 6330f0df16cf482a8694afb694d84807 | RegionOne | keystone     | identity        | True    | admin     | https://10.6.0.15:35357/v3              |
 | 665669e352ee4a4b911913a0e30723fb | RegionOne | octavia      | load-balancer   | True    | admin     | https://10.6.0.21:9876                  |
 | 842144b197b44a59be0b02f099fd79d0 | RegionOne | placement    | placement       | True    | admin     | https://10.6.0.30:8778                  |
