@@ -63,6 +63,7 @@ juju add-credential --client -f maas-creds.yaml maas-one
 ########### CONFIGURE MAAS ###############################
 
 ## Bootrap JUJU
+```
 juju bootstrap --bootstrap-series=jammy --constraints tags=juju maas-one maas-controller
-
+```
 
