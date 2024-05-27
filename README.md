@@ -1,1 +1,3 @@
-# openstack_install
+# Инсталиране на OpenStack
+
+Това хранилище съдържа описание на инсталирането на Openstack с помощта на MAAS и JUJU.
