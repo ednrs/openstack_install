@@ -31,7 +31,7 @@ When ```nova-cloud-controller``` and ```keystone``` became active and idle unsea
 
 Set address of the vault as environment variable (get the address of the vault from ```juju status```
 ```
-export VAULT_ADDR="http://10.6.0.25:8200"
+export VAULT_ADDR="http://10.6.0.12:8200"
 ```
 Initiate vault with five keys (three main and two backup keys)
 ```
