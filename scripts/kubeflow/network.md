@@ -77,6 +77,11 @@ Apply the file.
 ```
 juju add-cloud --client -f kube-cloud.yaml
 ```
+Then execute the following comand, select `1` and press `enter`.
+```
+juju autoload-credentials --client
+```
+
 ### Create flavor for Juju controller instance
 Two virtual CPUs and 4GB RAM &mdash; you do not need more.
 ```
