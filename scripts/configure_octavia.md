@@ -46,7 +46,7 @@ juju config octavia \
     lb-mgmt-controller-cacert="$(base64 controller_ca.pem)" \
     lb-mgmt-controller-cert="$(base64 controller_cert_bundle.pem)"
 ```
-Set the public network (not external -- public cloud network) and ssh key for Amporae instances.
+Set the public network (not external &mdash; public cloud network) and ssh key for Amporae instances.
 ```
 openstack keypair create --public-key ~/.ssh/id_rsa.pub maas
 juju config octavia amp-ssh-key-name=maas
