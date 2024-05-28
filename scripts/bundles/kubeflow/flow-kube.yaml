@@ -6,12 +6,12 @@ website: https://ubuntu.com/kubernetes/charmed-k8s
 name: charmed-kubernetes
 machines:
   '0':
-    constraints: cores=2 mem=8G root-disk=32G
+    constraints: cores=2 mem=16G root-disk=32G
   '1':
-    constraints: cores=2 mem=8G root-disk=32G
+    constraints: cores=2 mem=16G root-disk=32G
 machines:
   '2':
-    constraints: cores=2 mem=2G root-disk=8G
+    constraints: cores=1 mem=4G root-disk=16G
   '3':
     constraints: cores=8 mem=32G root-disk=64G
   '4':
