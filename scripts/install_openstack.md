@@ -6,7 +6,7 @@ juju bootstrap --bootstrap-series=jammy --constraints tags=juju maas-one maas-co
 ```
 ### Add model with specification
 ```
-add-model --config default-series=jammy --config default-space=public openstack
+juju add-model --config default-series=jammy --config default-space=public openstack
 juju model-defaults default-space=public
 juju model-config default-space=public
 juju set-model-constraints spaces=admin,internal,public
