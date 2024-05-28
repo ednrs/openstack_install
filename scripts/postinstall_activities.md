@@ -18,14 +18,14 @@ And save them.
 OS_REGION_NAME=RegionOne
 OS_AUTH_VERSION=3
 OS_CACERT=/root/snap/openstackclients/common/root-ca.crt
-OS_AUTH_URL=https://10.6.0.15:5000/v3
+OS_AUTH_URL=https://10.6.0.23:5000/v3
 OS_PROJECT_DOMAIN_NAME=admin_domain
 OS_AUTH_PROTOCOL=https
 OS_USERNAME=admin
 OS_AUTH_TYPE=password
 OS_USER_DOMAIN_NAME=admin_domain
 OS_PROJECT_NAME=admin
-OS_PASSWORD=AiWioZ1chohroori
+OS_PASSWORD=eilushoobeeThe6Y
 OS_IDENTITY_API_VERSION=3
 ```
 ## OpeStack endpoints
@@ -35,19 +35,19 @@ openstack endpoint list --interface admin
 ```
 And save the results somvewhere in some file.
 
-| ID                               | Region    | Service Name | Service Type    | Enabled | Interface | URL                                     |
+| ID                               | Region    | Service Name | Service Type    | Enabled | Interface | URL                                            |
 |----------------------------------|-----------|--------------|-----------------|---------|-----------|-----------------------------------------|
-| 16fbc2a771e6481f9a3ec9d75032ffa2 | RegionOne | swift        | object-store    | True    | admin     | https://10.6.0.28:443/swift             |
-| 2b65fdbeb86b4446a135aecfec5990f5 | RegionOne | s3           | s3              | True    | admin     | https://10.6.0.28:443/                  |
-| 4ca4ac444415427787164dfa5e938ad3 | RegionOne | neutron      | network         | True    | admin     | https://10.6.0.34:9696                  |
-| 6330f0df16cf482a8694afb694d84807 | RegionOne | keystone     | identity        | True    | admin     | https://10.6.0.15:35357/v3              |
-| 665669e352ee4a4b911913a0e30723fb | RegionOne | octavia      | load-balancer   | True    | admin     | https://10.6.0.21:9876                  |
-| 842144b197b44a59be0b02f099fd79d0 | RegionOne | placement    | placement       | True    | admin     | https://10.6.0.30:8778                  |
-| 8476cea6e7234c57afb760797f18d9f3 | RegionOne | image-stream | product-streams | True    | admin     | http://10.6.0.13                        |
-| 85b4e8566aa84e85a4ca6db6eacf2bb6 | RegionOne | barbican     | key-manager     | True    | admin     | https://10.6.0.18:9312                  |
-| 85fe3e8da9f445819f6b6e6b22b50f50 | RegionOne | cinderv3     | volumev3        | True    | admin     | https://10.6.0.17:8776/v3/$(tenant_id)s |
-| dc09beff6812427b90c845567d2e71c8 | RegionOne | glance       | image           | True    | admin     | https://10.6.0.24:9292                  |
-| ec684fe0ff9548129d7a5ff622774b90 | RegionOne | nova         | compute         | True    | admin     | https://10.6.0.16:8774/v2.1             |            |
+| 0c8203ca00984e07a56af47a22899c5a | RegionOne | placement    | placement       | True    | admin     | https://10.6.0.14:8778                         |
+| 11dfa5f9eb3242f1bbef4caedb02fc5f | RegionOne | image-stream | product-streams | True    | admin     | https://10.6.0.19:443/swift/simplestreams/data |
+| 4262548559ec49119d199814e5ef89df | RegionOne | swift        | object-store    | True    | admin     | https://10.6.0.19:443/swift                    |
+| 6fcbb8681d9044e8b3a46f752822fb41 | RegionOne | neutron      | network         | True    | admin     | https://10.6.0.27:9696                         |
+| 9053e57a047b4fe1879c337deef4e188 | RegionOne | cinderv3     | volumev3        | True    | admin     | https://10.6.0.7:8776/v3/$(tenant_id)s         |
+| 94e3243799ab4979aeddd5d1e0186478 | RegionOne | nova         | compute         | True    | admin     | https://10.6.0.24:8774/v2.1                    |
+| c70c5f82d1904d88af7c408b3b3c82b1 | RegionOne | barbican     | key-manager     | True    | admin     | https://10.6.0.9:9312                          |
+| cb08939b9ce94b2888ea56b711004557 | RegionOne | keystone     | identity        | True    | admin     | https://10.6.0.23:35357/v3                     |
+| cf768762fbf14011813452a0d76dba19 | RegionOne | s3           | s3              | True    | admin     | https://10.6.0.19:443/                         |
+| e57ffda491f3437c82e3c34cb51e0d88 | RegionOne | glance       | image           | True    | admin     | https://10.6.0.21:9292                         |
+| ec9817da21a14ad8ad6c2edd515c44bd | RegionOne | octavia      | load-balancer   | True    | admin     | https://10.6.0.15:9876                         |
 
 ## Access admin OpenStack Dashboard
 Get the address of the dashboard
