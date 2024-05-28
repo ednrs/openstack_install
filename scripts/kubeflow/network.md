@@ -36,6 +36,9 @@ Check networks with command ```openstack network list```
 | 6b32cd9b-73be-431b-b1d4-c94f71d6d5f1 | ext_net     | 79d0fa18-f27b-418e-891b-c006b29d0f30 |
 | a2fcd593-a7f2-40b0-9c69-0f8eafed50b3 | lb-mgmt-net | 84bda264-2590-4f5f-ab15-5b077eeb0f99 |
 
+## Setup environment variables for bootstraping of Juju controller inside Openstack
+Execute command `openstack image list` to check name of image which you can use.
 
+Set environment variables for bootstraping 
 
 
