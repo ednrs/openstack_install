@@ -46,6 +46,14 @@ juju config octavia \
     lb-mgmt-controller-cacert="$(base64 controller_ca.pem)" \
     lb-mgmt-controller-cert="$(base64 controller_cert_bundle.pem)"
 ```
+Set the public network (not external -- public cloud network) and ssh key for Amporae instances.
+```
+openstack keypair create --public-key ~/.ssh/id_rsa.pub maas
+juju config octavia amp-ssh-key-name=maas
+juju config octavia os-public-network=10.6.0.0/24
+juju config octavia amp-ssh-pub-key="$(base64 ~/.ssh/id_rsa.pub)"
+```
+
 ## Configure resources
 **NB!!!** Patiently wait untill ```watch -c juju status octavia --color``` became active, idle and the "Unit is ready"
 ```
