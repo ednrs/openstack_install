@@ -39,20 +39,20 @@ vault operator init -key-shares=5 -key-threshold=3
 ```
 Use three of them with command ```vault operator unseal```
 ```
-vault operator unseal Q70dkoSAxW/Sko6kOhSJVRGfenEFGdFIvu/6LooYNQaT
-vault operator unseal 1SUIidMByFjV8m/6MJRcCpPKxvJkb35fxDBuj3fZHBSb
-vault operator unseal J+73FQD55he0wy8rd7qWBnTtqeDbOiArNGujhCrW3Amt
+vault operator unseal tPKaXkJuGTvVA3miVgflNTkmgKuXNQ5HGYkMchHf+ahE
+vault operator unseal vhaM7JI/cf/irV/G3CyoaeeiIQ7B/0Z/iWkwJ+0xhOMT
+vault operator unseal /2cXbxO1HCi/2zgALUZKWkY3nEQEudp/Vt6GYg1Dgm5V
 ```
 ... and save the other two and the ```Initial Root Token```
 ```
-Unseal Key 4: zDgrc23uQaw7D7hzmda1AT/+7wdXwR4GFVCsfd98+2zU
-Unseal Key 5: ET0eVCbslSg8OfgtBSFkF3744GYLt8me0K5T/kp9cTCU
+Unseal Key 4: G/6MvoI6lW8RpE/IWiRMCJqvBe1lWmmuPWDkl7KikBLz
+Unseal Key 5: 3HIGGEvjuNfw/HZEHyY9u5LcbCUanJDZAawrkyiqtLVi
 
-Initial Root Token: s.IwKiZaABJhKZDLpaRhOTXioo
+Initial Root Token: s.S4pALZuoq8GjiAniSaWwvU0s
 ```
 Export the ```Initial Root Token```
 ```
-export VAULT_TOKEN=s.IwKiZaABJhKZDLpaRhOTXioo
+export VAULT_TOKEN=s.S4pALZuoq8GjiAniSaWwvU0s
 ```
 Then create the root token. 
 ```
@@ -60,12 +60,12 @@ vault token create -ttl=20m
 ```
 And save the resuts:
 ```
-token                s.1LyBALR4tms9h6NYJjHXDNfw
-token_accessor       2XRftrvnNHdw794YY6Y7HO5d
+token                s.rWp9SY21DuLIIKA219FseWo0
+token_accessor       2GsYhO8LrQP6bVGtvP2Yopyi
 ```
 Finally, authorise the vault charm with the token ...
 ```
-juju run vault/leader authorize-charm token=s.1LyBALR4tms9h6NYJjHXDNfw
+juju run vault/leader authorize-charm token=s.rWp9SY21DuLIIKA219FseWo0
 ```
 ... and generate root certificate for the Openstack
 ```
@@ -75,24 +75,24 @@ Save the results and wait untill **ALL** services shown in ```juju status``` bec
 ```
 output: |-
   -----BEGIN CERTIFICATE-----
-  MIIDazCCAlOgAwIBAgIUUCngwSqISGxyyHXSbB0jabfsaXwwDQYJKoZIhvcNAQEL
+  MIIDazCCAlOgAwIBAgIUPEvn8wYpCroAnFm7QL4K2/y4YgEwDQYJKoZIhvcNAQEL
   BQAwPTE7MDkGA1UEAxMyVmF1bHQgUm9vdCBDZXJ0aWZpY2F0ZSBBdXRob3JpdHkg
-  KGNoYXJtLXBraS1sb2NhbCkwHhcNMjQwNTIzMTYwMDIzWhcNMzQwNTIxMTUwMDUz
+  KGNoYXJtLXBraS1sb2NhbCkwHhcNMjQwNTI4MTkzNzAwWhcNMzQwNTI2MTgzNzMw
   WjA9MTswOQYDVQQDEzJWYXVsdCBSb290IENlcnRpZmljYXRlIEF1dGhvcml0eSAo
   Y2hhcm0tcGtpLWxvY2FsKTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEB
-  AKGqf+/3Xe+58Myw+Op8kihG7LoWgPxrUAZY4mF9/qjl3VQ017Lh/lJJAMevo31Q
-  vviIhmVyCEyw3oYHEqwHNRaZCvMSFYg765yaFGViTtnsZVroIcbakcDXcMa+MNE6
-  ECZ56OiVLmIPQxeySwiVg8T9RI7mM+Jf1QLO3ASFyhMDhp62VLGsSU6GpRLpB4oc
-  foFdMzr7gZlBjwR0ej45wS+NzqJRfe778gg1SvFqSvQiaMuerho0f7ifDc5M91lp
-  GfRdF85mOAPM92EFMSiRkidQz9D0UXS/pLKMHMeGxDn1t/EZ2wW2wimmeZRXamph
-  dFN7l7EIWmnueF189tfEflkCAwEAAaNjMGEwDgYDVR0PAQH/BAQDAgEGMA8GA1Ud
-  EwEB/wQFMAMBAf8wHQYDVR0OBBYEFCK3eNHFCsY47BYritqObWitBBtiMB8GA1Ud
-  IwQYMBaAFCK3eNHFCsY47BYritqObWitBBtiMA0GCSqGSIb3DQEBCwUAA4IBAQAS
-  1RfjRaaXGHF/fSGstjn5yjlmsK8GpTUj3C3mbxIUBpbJCeR/ohcLgsMh6mRW/vSJ
-  GiM2MvhXdFE5pSYUOA0chud8i8a+KTRcO+2Ghc1K11rUxcXCUnznV8enl8rqeRms
-  h5L4BIPBgfqM6w/eFyhbmQbjFiCyek57jFw495TJkzwxOIw74wsuZPfAvp9Nkl44
-  qT/rce1saA5xF4ooSqbvSlaszUnaFSX0h8QSTlRYZb9QQaFtLcCjV98wQqdD8Hjv
-  eRQUFrkRr3TfvG3wfr8/nEUi3nF6v5uAnB2KD6j3ThffC1YTy0vhsssnWDU3Vz+T
-  nIM+ncT2iEZjpO4xRBvS
+  ANz5CKIHxG3kkW29PDVF0doAq+3QzuBG1u2qxufPPqgZXiG85s0U71UZXzuFZxox
+  RG3mi7kP/hjlEo+oi0JQAXJmjiDdSLPoVkTpwtfM0q+zcnWj0tAhni1PR8gInam3
+  LHyMHUaEn2QBslCR+zdFyx3pw3vbCi7IPKzBtuOxIEVpoAdhlL0BYgOQfixYxaM5
+  Y18aBNozfjzAVJTN8id7zpZIe76uF+xRB/+dzWBFgT7N+MoVORc2INIY/ylJTB4M
+  fq2sLNtYZV27uTEggIo92RZS4pL7CKp1NSDJNguE93cJXWwDiYsGNLOLU8Z84LKI
+  GdGyPdHC1/+agS2LSJd21oMCAwEAAaNjMGEwDgYDVR0PAQH/BAQDAgEGMA8GA1Ud
+  EwEB/wQFMAMBAf8wHQYDVR0OBBYEFHJzDeCDG56+ejFOcKJmA3cByONjMB8GA1Ud
+  IwQYMBaAFHJzDeCDG56+ejFOcKJmA3cByONjMA0GCSqGSIb3DQEBCwUAA4IBAQCl
+  n5ueryNcMVxgD8VuClFXo6L7HslG0N36/3jxzjfNGTFHQnh68pUFUAFcDjjZpuJw
+  fbsfTv6ba5J0BvwFrZuKmbPoNblDT5az5HaHcMLqDhw4AZgYP9Bo71x+eEi7e8C2
+  4AgY0K/QQk9DjOUsaz7B5iXBsZyyaSOPY/own48vnIgHfURycXS6uV0oLrpkQaPW
+  4w56oj4WYgCkkLvukaEAunt3VDbFBAMmYeMys4z8SXeJGfHzoZUDrXjvityqeV/s
+  /mlvSzpVN/iD/AZyJ4x9Eu9/XffcP+VPlii+jvs+KrOtj7+aup5IDtpIhKRdsuPZ
+  1IsJ1dFvEDisa3dtxXFn
   -----END CERTIFICATE-----
 ```
