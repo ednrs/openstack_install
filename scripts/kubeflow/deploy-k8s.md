@@ -8,3 +8,23 @@ openstack flavor create medium.juju.machine --id medium.juju --ram 16384 --disk 
 openstack flavor create big.juju.machine --id big.juju --ram 32768 --disk 64 --vcpus 8
 openstack flavor create lb.juju.machine --id lb.juju --ram 4096 --disk 16 --vcpus 1
 ```
+## Set-up the quotas
+```
+openstack quota set --instances 32 --class default
+openstack quota set --ram 204800 --class default
+openstack quota set --cores 48 --class default
+PROJ_ID=$(openstack project show admin -f yaml -c id | awk '{print $2}')
+openstack quota set --secgroups 128 $PROJ_ID
+```
+## Add juju model to the cloud *kube*
+The configuration of the model set use of floating IPs from the external network, external and internal network IDs.   
+```
+juju add-model --config default-series=jammy kube
+
+juju model-defaults use-floating-ip=true
+juju model-defaults allocate-public-ip=true
+juju model-defaults network=$INT_NET_ID
+juju model-defaults external-network=$FIP_ID
+juju set-model-constraints allocate-public-ip=true
+```
+
