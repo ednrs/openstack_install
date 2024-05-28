@@ -8,7 +8,7 @@ In order to configure Octavia with its own certificates and password ```foobar``
 
 ## Create Octavia keys
 ```
-mkdir certs && cd certs
+mkdir -p certs && cd certs
 mkdir -p demoCA/newcerts
 touch demoCA/index.txt
 touch demoCA/index.txt.attr
