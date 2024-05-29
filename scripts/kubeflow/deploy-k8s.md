@@ -27,4 +27,25 @@ juju model-defaults network=$INT_NET_ID
 juju model-defaults external-network=$FIP_ID
 juju set-model-constraints allocate-public-ip=true
 ```
-
+## Deploy the cluster
+```
+juju deploy ./flow-kube.yaml --overlay openstack-integrator-overlay.yaml --trust --overlay ovn-kube-overlay.yaml
+```
+When command finisheds configure `openstack-integrator`
+```
+juju trust openstack-integrator
+juju config openstack-integrator lb-floating-network=$FIP_ID lb-subnet=$SUB_KUBE_ID manage-security-groups=true
+```
+Configure ingress access to workers with the following commands:
+```
+juju config kubernetes-worker ingress=true
+juju config kubernetes-worker ingress-use-forwarded-headers=true
+```
+Watch progress of the deployment of the machine with 
+```
+watch -c juju machines --color
+```
+And after all machines are started, watch the status
+```
+watch -c juju status --color
+```
