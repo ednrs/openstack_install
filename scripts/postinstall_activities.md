@@ -57,7 +57,7 @@ juju status --format=yaml openstack-dashboard | grep public-address | awk '{prin
 ```
 Open Horizon dahboard
 ```
-https://10.6.0.28/horizon
+https://10.6.0.43/horizon
 ```
 Get the admin password
 ```
