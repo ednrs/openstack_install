@@ -26,8 +26,8 @@ kubectl -n kubeflow get svc istio-ingressgateway-workload -o jsonpath='{.status.
 ```
 Configure some address. It can be domain, just the IP of the LoadBalancer or combination of the IP as a subdomain of a fake domain.
 ```
-juju config dex-auth public-url=http://10.10.0.145.nip.io
-juju config oidc-gatekeeper public-url=http://10.10.0.145.nip.io
+juju config dex-auth public-url=http://10.10.0.191.nip.io
+juju config oidc-gatekeeper public-url=http://10.10.0.191.nip.io
 ```
 Finally configure user and password.
 ```
