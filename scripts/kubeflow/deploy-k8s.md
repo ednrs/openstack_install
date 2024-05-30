@@ -16,6 +16,7 @@ openstack flavor create lb.juju.machine --id lb.juju --ram 4096 --disk 16 --vcpu
 openstack quota set --instances 32 --class default
 openstack quota set --ram 204800 --class default
 openstack quota set --cores 48 --class default
+openstack quota set --volumes 100 --class default
 PROJ_ID=$(openstack project show admin -f yaml -c id | awk '{print $2}')
 openstack quota set --secgroups 128 $PROJ_ID
 ```
