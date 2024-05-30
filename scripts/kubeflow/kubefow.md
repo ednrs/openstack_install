@@ -58,7 +58,7 @@ metadata:
 spec:
   ingressClassName: nginx-ingress-controller
   rules:
-  - host: 10.10.0.45.nip.io
+  - host: 10.10.0.52.nip.io
     http:
       paths:
       - path: /
@@ -70,10 +70,10 @@ spec:
               number: 80
 EOF
 ```
-The address `10.10.0.45` is the workers leader IP address.
+The address `10.10.0.52` is the workers leader IP address.
 Configure the dex service:
 ```
-juju config dex-auth public-url=http://10.10.0.45.nip.io
-juju config oidc-gatekeeper public-url=http://10.10.0.45.nip.io
+juju config dex-auth public-url=http://10.10.0.52.nip.io
+juju config oidc-gatekeeper public-url=http://10.10.0.52.nip.io
 ```
 
