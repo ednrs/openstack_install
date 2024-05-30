@@ -31,7 +31,7 @@ When ```nova-cloud-controller``` and ```keystone``` became active and idle unsea
 
 Set address of the vault as environment variable (get the address of the vault from ```juju status```
 ```
-export VAULT_ADDR="http://10.6.0.12:8200"
+export VAULT_ADDR="http://10.6.0.41:8200"
 ```
 Initiate vault with five keys (three main and two backup keys)
 ```
@@ -39,20 +39,20 @@ vault operator init -key-shares=5 -key-threshold=3
 ```
 Use three of them with command ```vault operator unseal```
 ```
-vault operator unseal tPKaXkJuGTvVA3miVgflNTkmgKuXNQ5HGYkMchHf+ahE
-vault operator unseal vhaM7JI/cf/irV/G3CyoaeeiIQ7B/0Z/iWkwJ+0xhOMT
-vault operator unseal /2cXbxO1HCi/2zgALUZKWkY3nEQEudp/Vt6GYg1Dgm5V
+vault operator unseal Vf8aA7BB/YQ82byasAriQt5wfadXtCa32uJRZiVojnx0
+vault operator unseal HqX2dD5+dg9YvsJrkZ83vwUZY8HPjxNo1HtM1eputmQf
+vault operator unseal J1RK74jMYw9XuO0aLwzOwirGoGQnM1r88Z5dri1GAgyg
 ```
 ... and save the other two and the ```Initial Root Token```
 ```
-Unseal Key 4: G/6MvoI6lW8RpE/IWiRMCJqvBe1lWmmuPWDkl7KikBLz
-Unseal Key 5: 3HIGGEvjuNfw/HZEHyY9u5LcbCUanJDZAawrkyiqtLVi
+Unseal Key 4: vUFb9LkU5PzM2sEIevsI181kIwhRoYowdwFOK4VsetOk
+Unseal Key 5: Ty1YThrl8RzeAkrAP08WI0oPBfnZgat31Aqh11YI9O1R
 
-Initial Root Token: s.S4pALZuoq8GjiAniSaWwvU0s
+Initial Root Token: s.9O0GbH389QL2YaHtH3FMZz5d
 ```
 Export the ```Initial Root Token```
 ```
-export VAULT_TOKEN=s.S4pALZuoq8GjiAniSaWwvU0s
+export VAULT_TOKEN=s.9O0GbH389QL2YaHtH3FMZz5d
 ```
 Then create the root token. 
 ```
@@ -60,12 +60,12 @@ vault token create -ttl=20m
 ```
 And save the resuts:
 ```
-token                s.rWp9SY21DuLIIKA219FseWo0
-token_accessor       2GsYhO8LrQP6bVGtvP2Yopyi
+token                s.zzIbSAi5U9iE860GYYGOEmk3
+token_accessor       Qqj28WACPPgRgrGXXc5lMhdd
 ```
 Finally, authorise the vault charm with the token ...
 ```
-juju run vault/leader authorize-charm token=s.rWp9SY21DuLIIKA219FseWo0
+juju run vault/leader authorize-charm token=s.zzIbSAi5U9iE860GYYGOEmk3
 ```
 ... and generate root certificate for the Openstack
 ```
@@ -75,24 +75,24 @@ Save the results and wait untill **ALL** services shown in ```juju status``` bec
 ```
 output: |-
   -----BEGIN CERTIFICATE-----
-  MIIDazCCAlOgAwIBAgIUPEvn8wYpCroAnFm7QL4K2/y4YgEwDQYJKoZIhvcNAQEL
+  MIIDazCCAlOgAwIBAgIUHdNtS3Jx8B8eMhCqnrJF3Aj/GmEwDQYJKoZIhvcNAQEL
   BQAwPTE7MDkGA1UEAxMyVmF1bHQgUm9vdCBDZXJ0aWZpY2F0ZSBBdXRob3JpdHkg
-  KGNoYXJtLXBraS1sb2NhbCkwHhcNMjQwNTI4MTkzNzAwWhcNMzQwNTI2MTgzNzMw
+  KGNoYXJtLXBraS1sb2NhbCkwHhcNMjQwNTMwMTkwODI5WhcNMzQwNTI4MTgwODU5
   WjA9MTswOQYDVQQDEzJWYXVsdCBSb290IENlcnRpZmljYXRlIEF1dGhvcml0eSAo
   Y2hhcm0tcGtpLWxvY2FsKTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEB
-  ANz5CKIHxG3kkW29PDVF0doAq+3QzuBG1u2qxufPPqgZXiG85s0U71UZXzuFZxox
-  RG3mi7kP/hjlEo+oi0JQAXJmjiDdSLPoVkTpwtfM0q+zcnWj0tAhni1PR8gInam3
-  LHyMHUaEn2QBslCR+zdFyx3pw3vbCi7IPKzBtuOxIEVpoAdhlL0BYgOQfixYxaM5
-  Y18aBNozfjzAVJTN8id7zpZIe76uF+xRB/+dzWBFgT7N+MoVORc2INIY/ylJTB4M
-  fq2sLNtYZV27uTEggIo92RZS4pL7CKp1NSDJNguE93cJXWwDiYsGNLOLU8Z84LKI
-  GdGyPdHC1/+agS2LSJd21oMCAwEAAaNjMGEwDgYDVR0PAQH/BAQDAgEGMA8GA1Ud
-  EwEB/wQFMAMBAf8wHQYDVR0OBBYEFHJzDeCDG56+ejFOcKJmA3cByONjMB8GA1Ud
-  IwQYMBaAFHJzDeCDG56+ejFOcKJmA3cByONjMA0GCSqGSIb3DQEBCwUAA4IBAQCl
-  n5ueryNcMVxgD8VuClFXo6L7HslG0N36/3jxzjfNGTFHQnh68pUFUAFcDjjZpuJw
-  fbsfTv6ba5J0BvwFrZuKmbPoNblDT5az5HaHcMLqDhw4AZgYP9Bo71x+eEi7e8C2
-  4AgY0K/QQk9DjOUsaz7B5iXBsZyyaSOPY/own48vnIgHfURycXS6uV0oLrpkQaPW
-  4w56oj4WYgCkkLvukaEAunt3VDbFBAMmYeMys4z8SXeJGfHzoZUDrXjvityqeV/s
-  /mlvSzpVN/iD/AZyJ4x9Eu9/XffcP+VPlii+jvs+KrOtj7+aup5IDtpIhKRdsuPZ
-  1IsJ1dFvEDisa3dtxXFn
+  ALzyeyGAufiBRHGCllTDZH0htd6SXA3L6HDewmH3mxje+Sx3pv/Y9RkTpMqFLi1t
+  mVS8EU5Mrdx6/VIn5hwBDU3JxVvLwlBX25uXqK1MceLEb51+7frqLtROJWQ6DnJd
+  zikmYlayP0eIXNkTYk44iApCfK6CZ0N0GX0NAwCBb5PLf8R1SDoevEPMBcECqJpy
+  OACcLXGfdAdkjn53xULv/MwbhebQwaG/iG0gDmYuPcm5FPmvx98Yj+VWpNtmdEvz
+  Fhvh9+WdITuEYOoMXTcOXGPAaz7e8hLFpDoXUI7O6ZCTWWQHoj5Y5fSwXn7fCT8O
+  thm/HByvBBMy9q2Q2fY/i4UCAwEAAaNjMGEwDgYDVR0PAQH/BAQDAgEGMA8GA1Ud
+  EwEB/wQFMAMBAf8wHQYDVR0OBBYEFKMr+FiA/dN6b5E6j/s1f5riIsN/MB8GA1Ud
+  IwQYMBaAFKMr+FiA/dN6b5E6j/s1f5riIsN/MA0GCSqGSIb3DQEBCwUAA4IBAQAP
+  myJMq5RiORteVZdKnKrolBpzlmhWqjyZSFDLNChiWc5HHjh34vePJ2TjKxAOwprX
+  3U8MX7yQwzfplv1oBMXAVrisJvK6Ey3Bpx/wZ7NqF03AWBPk5iaJi4p5/8m5BRi0
+  kCBjiyY/kQBwO3WNo282nhiS/0UNsjqzfX26mWFTgVuObIkck91k47F7QWfklUXv
+  BDiH6XgxJOX4oxwiO5Fla2xQGr2+Hm8M09IP9+Jz8DwAOQBSc4Hw1rbQjiMMvBmS
+  8+WCzDoUB7s/XGpD9zY18IB2sXRIbyw/omyppbQT0+ofHRnmUOJkaQuVRJ8bC5BU
+  +iB9TtnJ9+ljmpTyqOIo
   -----END CERTIFICATE-----
 ```
