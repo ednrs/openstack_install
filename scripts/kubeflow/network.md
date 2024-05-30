@@ -63,10 +63,10 @@ clouds:
   kube:
     type: openstack
     auth-types: [access-key, userpass]
-    endpoint: https://10.6.0.23:5000/v3
+    endpoint: https://10.6.0.52:5000/v3
     regions:
       RegionOne:
-        endpoint: https://10.6.0.23:5000/v3
+        endpoint: https://10.6.0.52:5000/v3
     ca-certificates: 
     - |
 EOF
