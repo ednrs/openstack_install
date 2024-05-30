@@ -31,21 +31,21 @@ openstack router set kube_router --external-gateway ext_net
 Check networks with command ```openstack network list```
 
 | ID                                   | Name        | Subnets                              |
-| ------------------------------------ | ----------- | ------------------------------------ |
-| 639b4740-314d-4b77-bfa7-469b31fc8c91 | kube        | 8dc82ca3-52cf-40c4-b991-d57ec2b15c7d |
-| 6b32cd9b-73be-431b-b1d4-c94f71d6d5f1 | ext_net     | 79d0fa18-f27b-418e-891b-c006b29d0f30 |
-| a2fcd593-a7f2-40b0-9c69-0f8eafed50b3 | lb-mgmt-net | 84bda264-2590-4f5f-ab15-5b077eeb0f99 |
+|--------------------------------------|-------------|--------------------------------------|
+| 56b3c018-7b4e-4722-87f3-d73b76c4e626 | ext_net     | f5510973-6589-4ea8-985b-6dbb49edbaea |
+| 9f4ae404-3e9a-41a6-9d93-5f412ff56b50 | kube        | d65bd2d7-ea97-41a1-80d9-843e08716f4c |
+| b5e92609-7a1c-4a99-9a62-27423ac43b53 | lb-mgmt-net | 61f44676-91b3-4e2e-acfa-bc7962548d2c |
 
 ## Setup environment variables for bootstraping of Juju controller inside Openstack
 Execute command `openstack image list` to check name of image which you can use.
 | ID                                   | Name                                                          | Status |
-| ------------------------------------ | ------------------------------------------------------------- | ------ |
-| 5492b5f8-0ac5-497c-944a-d9a1986a1ca3 | amphora-haproxy-x86_64-ubuntu-22.04-20240514                  | active |
-| 0eda49ef-3d20-45ed-b953-143d85613dd5 | auto-sync/ubuntu-bionic-18.04-amd64-server-20230607-disk1.img | active |
-| 9c5d5c6f-9c3c-49ae-87d2-a1499c612ec5 | auto-sync/ubuntu-focal-20.04-amd64-server-20240513-disk1.img  | active |
-| f94f1bd6-3ad8-4113-aa35-f862f452d018 | auto-sync/ubuntu-jammy-22.04-amd64-server-20240514-disk1.img  | active |
-| d59f2039-b6df-49e6-84f4-bf5b2caa7ccb | auto-sync/ubuntu-trusty-14.04-amd64-server-20191107-disk1.img | active |
-| 0edf0547-f2fc-407f-bf85-d428c2dbf83a | auto-sync/ubuntu-xenial-16.04-amd64-server-20211001-disk1.img | active |
+|--------------------------------------|---------------------------------------------------------------|--------|
+| 55884174-cd2d-4233-9714-ac36e4e5d8cd | amphora-haproxy-x86_64-ubuntu-22.04-20240514                  | active |
+| ff6d32ab-18ab-48c7-9049-cb5ad2a4f9a1 | auto-sync/ubuntu-bionic-18.04-amd64-server-20230607-disk1.img | active |
+| 2635249b-c353-434b-b513-97bfff973886 | auto-sync/ubuntu-focal-20.04-amd64-server-20240513-disk1.img  | active |
+| 57be989b-8998-448b-8432-502e6fa8d44e | auto-sync/ubuntu-jammy-22.04-amd64-server-20240514-disk1.img  | active |
+| 6b521cc2-a366-4058-a786-df989d4fd994 | auto-sync/ubuntu-trusty-14.04-amd64-server-20191107-disk1.img | active |
+| 6958d32a-27c8-467c-bd6c-e081788a6477 | auto-sync/ubuntu-xenial-16.04-amd64-server-20211001-disk1.img | active |
 
 Set environment variables for bootstraping with the following commands:
 ```
