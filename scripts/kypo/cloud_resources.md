@@ -115,5 +115,20 @@ Copy vars tmplate to vars file
 ```
 cp tfvars/deployment.tfvars-template tfvars/deployment.tfvars
 ```
-
+Change the name for the external network in `tfvars/deployment.tfvars`
+```
+sed -i 's/external_network_name = \"\"/external_network_name = \"ext_knet\"/g' tfvars/deployment.tfvars
+```
+Change `openstack provider` to use insecure connection.
+```
+sed -i 's/provider \"openstack\" {}/provider \"openstack\" = {\ninsecure=true\n}/g' provider.tf
+```
+Initialise terraform plan.
+```
+terraform init
+```
+If you want you can change additional varibles in `tfvars/vars-all.tfvars` file.
+Install KYPO's Openstack base resources.
+```
+terraform apply -var-file tfvars/deployment.tfvars -var-file tfvars/vars-all.tfvars --auto-approve
 ```
