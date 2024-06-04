@@ -50,6 +50,14 @@ openstack router create kypo_router
 openstack router add subnet kypo_router kypo_subnet
 openstack router set kypo_router --external-gateway ext_knet
 ```
+Check networks with command `openstack network list`.
+| ID                                   | Name        | Subnets                              |
+|--------------------------------------|-------------|--------------------------------------|
+| 264a9f6e-53fd-4810-8f1b-cbe7a2d478d9 | kypo        | 14a4f1b9-2fb5-4bf0-96bd-e7041ddecd7a |
+| 56b3c018-7b4e-4722-87f3-d73b76c4e626 | ext_net     | f5510973-6589-4ea8-985b-6dbb49edbaea |
+| 609d74a2-c57e-4c55-83db-e0703f11a657 | ext_knet    | 3030c5b4-f622-4518-a860-9c16b85360a0 |
+| 9f4ae404-3e9a-41a6-9d93-5f412ff56b50 | kube        | d65bd2d7-ea97-41a1-80d9-843e08716f4c |
+| b5e92609-7a1c-4a99-9a62-27423ac43b53 | lb-mgmt-net | 61f44676-91b3-4e2e-acfa-bc7962548d2c |
 
 ### Create KYPO application credential
 Create specific non-user related credential for KYPO k8s with the following command.
