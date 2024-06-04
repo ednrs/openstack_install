@@ -24,7 +24,7 @@ OS_PASSWORD=123456
 OS_IDENTITY_API_VERSION=3
 ```
 ## Create external and iternal network for KYPO 
-Create extenal network `10.18.0.0/24` as a VLAN, name `ext_knet`, `tag 18` (it is configured on ProxMox Open vSwitch) and internal Opnestack's network `10.25.0.0/24`, name 'kypo_net`. 
+Create extenal network `10.18.0.0/24` as a VLAN, name `ext_knet`, `tag 18` (it is configured on ProxMox Open vSwitch). 
 ```
 openstack network create --external --share \
    --provider-network-type vlan --provider-segment 18 \
@@ -36,19 +36,6 @@ openstack subnet create --network ext_knet --no-dhcp  \
    --allocation-pool start=10.18.0.10,end=10.18.0.250 \
    --dns-nameserver 10.6.0.10 \
    ext_ksubnet
-
-openstack network create --internal kypo
-
-openstack subnet create --network kypo --dns-nameserver 10.6.0.10 \
-   --subnet-range 10.25.0/24 \
-   --allocation-pool start=10.25.0.20,end=10.25.0.100 \
-   kypo_subnet
-```
-Create router between two networks.
-```
-openstack router create kypo_router
-openstack router add subnet kypo_router kypo_subnet
-openstack router set kypo_router --external-gateway ext_knet
 ```
 Check networks with command `openstack network list`.
 | ID                                   | Name        | Subnets                              |
