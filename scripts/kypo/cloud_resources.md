@@ -70,14 +70,14 @@ With this information (`id` and `secret`) create file with KYPO application cred
 
 ```
 cat << EOF >  kypo-application
-#!/bin/bash
+#!/usr/bin/env bash
 
 export OS_AUTH_TYPE=v3applicationcredential
-export OS_AUTH_URL=https://10.3.0.52:5000/v3
+export OS_AUTH_URL=https://10.6.0.52:5000/v3
 export OS_IDENTITY_API_VERSION=3
-export OS_REGION_NAME=RegionOne
+export OS_REGION_NAME="RegionOne"
 export OS_INTERFACE=public
-export OS_APPLICATION_CREDENTIAL_ID=e9c87d6055ac46b29c749b6b308550c9
+export OS_APPLICATION_CREDENTIAL_ID=b2c0732db0bf4c399554b1036f0283f2
 export OS_APPLICATION_CREDENTIAL_SECRET=clzl5yUcPLJh2fd2eYGtuS8bkxpMPQdlqc5qh4lRyZuTtSyH2yuc8nOZaG_WR0wIO3vpj70UW2W4SITXKuzGcw
 export OS_CACERT=/root/snap/openstackclients/common/root-ca.crt
 EOF
