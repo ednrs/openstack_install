@@ -1,8 +1,16 @@
-
-
-
+# Create KYPO kubernetes resources &mdash; kypo-head-services
+```
+cd /opt/kypo-crp-tf-deployment/tf-head-services/
+```
+Copy file with variables for install. Look [here](https://gitlab.ics.muni.cz/muni-kypo-crp/devops/kypo-crp-tf-deployment/-/blob/master/HELM.md) and [here](https://gitlab.ics.muni.cz/muni-kypo-crp/devops/kypo-crp-tf-deployment/-/tree/master/tf-openstack-base) for variables exlanation. 
+```
 cp tfvars/deployment.tfvars-template tfvars/deployment.tfvars
-ln -sf /usr/bin/base64 /usr/local/bin/base64decode
+```
+
+Prepare the file with your passwords. Copy the keys and sertificates for KYPO kubernetes from previous stage of installing the Openstack KYPO's resources. Decide whether to use own GITLAB repo or local github.
+**NB:** Prepare your FDQN record for the KYPO in your registrar or dns proxy (if you using one). If you prefer not to use FDQN you can use kubernetes IP as a `head_host`.
+
+Ready file:
 ```
 acme_contact                  = "gpenchev@gpenchev@gmail.com"
 application_credential_id     = "e9c87d6055ac46b29c749b6b308550c9"
