@@ -12,8 +12,8 @@ Prepare the file with your passwords. Copy the keys and sertificates for KYPO ku
 
 Ready file:
 ```
-acme_contact                  = "gpenchev@gpenchev@gmail.com"
-application_credential_id     = "e9c87d6055ac46b29c749b6b308550c9"
+acme_contact                  = "gpenchev@gmail.com"
+application_credential_id     = "8b2b28edcca64d16a6617780ff1df696"
 application_credential_secret = "clzl5yUcPLJh2fd2eYGtuS8bkxpMPQdlqc5qh4lRyZuTtSyH2yuc8nOZaG_WR0wIO3vpj70UW2W4SITXKuzGcw"
 enable_monitoring             = true
 gen_user_count                = "8"
@@ -27,36 +27,26 @@ git_config = {
      accessToken          = "no-gitlab-token"
      ansibleNetworkingUrl = "git@git-internal.kypo:/repos/backend-python/ansible-networking-stage/kypo-ansible-stage-one.git"
      ansibleNetworkingRev = "v1.0.14"
-  # Example of GitLab
-  #   type                 = "GITLAB"
-  #   server               = "example.com"
-  #   sshPort              = 22
-  #   restServerUrl        = "https://example.com/"
-  #   user                 = "git"
-  #   privateKey           = "`base64 -w0 ssh_private.key`"
-  #   accessToken          = "alpha-num-string"
-  #   ansibleNetworkingUrl = "git@example.com:kypo-ansible-stage-one.git"
-  #   ansibleNetworkingRev = "master"
 }
 guacamole_admin_password      = "5YDBzE2SlpM7k9nnevsqig=="
 guacamole_user_password       = "Ut9ghn7NjaW5VUUhuuH4rA=="
 head_host                     = "fcr.e-dnrs.org"
-head_ip                       = "10.18.0.235"
-kubernetes_host               = "10.18.0.235"
-kubernetes_client_certificate = "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUIzRENDQVdLZ0F3SUJBZ0lSQU9oT3R5Y2FPUFJkdTVZanQ1ajdvOWN3Q2dZSUtvWkl6ajBFQXdNd0dERVcKTUJRR0ExVUVBeE1OYTNWaVpYSnVaWFJsY3kxallUQWVGdzB5TkRBMk1EWXdOelEzTWpWYUZ3MHpOREEyTURZeApPVFEzTWpWYU1ESXhGekFWQmdOVkJBb1REbk41YzNSbGJUcHRZWE4wWlhKek1SY3dGUVlEVlFRREV3NTBaWEp5CllXWnZjbTB0ZFhObGNqQjJNQkFHQnlxR1NNNDlBZ0VHQlN1QkJBQWlBMklBQkV0Rkx5c1dKWlZ5QVlzWmFIWloKMFFJVWx2cEJGclNvRCt6MUdtUkZVUS9MQ1oveWE1Z3BOSHpmVmRwaTRsNWsrbGpwSlF2YmJBWkhHVEFIV29CYQozYklEUFB2ZnY3bHdyWVhtZFhiK015RDc5VTVDUVdyalpFa05HOVBpNE9HNTVxTldNRlF3RGdZRFZSMFBBUUgvCkJBUURBZ1dnTUJNR0ExVWRKUVFNTUFvR0NDc0dBUVVGQndNQ01Bd0dBMVVkRXdFQi93UUNNQUF3SHdZRFZSMGoKQkJnd0ZvQVV0YnU2Qmt6VmkzN0hOdy9KdkhIeVZVUnArbXd3Q2dZSUtvWkl6ajBFQXdNRGFBQXdaUUl4QU11ego1aU5aOWxTME5MbnpYNGdycVdHQXdEdWh5YysyOTRFVWxUNUUvOHBzZE5XbHpjSEh5b3hPb2JXSmdUK0FMQUl3CkpCaGVnZWJDajZDUWpVSU1HdFdWbCtpRHVaTzhJUEhNb2daMkNpaUhSQmU3SEViZG1QUHN5V3Y4eFQ2cEFYVHMKLS0tLS1FTkQgQ0VSVElGSUNBVEUtLS0tLQo="
-kubernetes_client_key = "LS0tLS1CRUdJTiBFQyBQUklWQVRFIEtFWS0tLS0tCk1JR2tBZ0VCQkRDL1hHMUR0V0M4VklwejNiSExPSGl6UU91RFh1UDZFMjNydWZNMDc2SnlHSXRRdERvYXE3aFQKRko2QTFQZEl1Ym1nQndZRks0RUVBQ0toWkFOaUFBUkxSUzhyRmlXVmNnR0xHV2gyV2RFQ0ZKYjZRUmEwcUEvcwo5UnBrUlZFUHl3bWY4bXVZS1RSODMxWGFZdUplWlBwWTZTVUwyMndHUnhrd0IxcUFXdDJ5QXp6NzM3KzVjSzJGCjVuVjIvak1nKy9WT1FrRnE0MlJKRFJ2VDR1RGh1ZVk9Ci0tLS0tRU5EIEVDIFBSSVZBVEUgS0VZLS0tLS0K"
+head_ip                       = "10.18.0.47"
+kubernetes_host               = "10.18.0.47"
+kubernetes_client_certificate = "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUIzRENDQVdLZ0F3SUJBZ0lSQU1RSDNJTDZSUmNaZFNrZlh3Y2xvakl3Q2dZSUtvWkl6ajBFQXdNd0dERVcKTUJRR0ExVUVBeE1OYTNWaVpYSnVaWFJsY3kxallUQWVGdzB5TkRBMk1EWXhPREF5TkRkYUZ3MHpOREEyTURjdwpOakF5TkRkYU1ESXhGekFWQmdOVkJBb1REbk41YzNSbGJUcHRZWE4wWlhKek1SY3dGUVlEVlFRREV3NTBaWEp5CllXWnZjbTB0ZFhObGNqQjJNQkFHQnlxR1NNNDlBZ0VHQlN1QkJBQWlBMklBQkU1SzdtZkNNREY2TURwTk1Oc3IKZWpxVWRkc2d5dW9jOVRKQ29DTDFWNmlQY3h4cmlaNHhYc1VDTHo3YUt4dG9EWHJPWW1MSjAybTRtZWQzTzJtQwpyV3FzSytFby80RE1TRlpBQ2JycXhHSVY4MXVjaDdYYjZXbjRhWjNyeWRZZDRLTldNRlF3RGdZRFZSMFBBUUgvCkJBUURBZ1dnTUJNR0ExVWRKUVFNTUFvR0NDc0dBUVVGQndNQ01Bd0dBMVVkRXdFQi93UUNNQUF3SHdZRFZSMGoKQkJnd0ZvQVVTUTNRZW5jNzRYcDlBd2pBV1BocmpsNm9IS013Q2dZSUtvWkl6ajBFQXdNRGFBQXdaUUl4QU5BdgplNXdZdFRHZHoxSVRwL0NJcld2WXluTTJ5UUh4MGFFUUxrMHg5NWh1aU43MnhLeFlQQ1BEQmkxQTR4Q1g5QUl3CkR3WDhVRmpTNk12Ly9EL1Q2ajVEU3FQVHlYaGtNVVlTRlBYNUpXZVZWcWR6Nk13THpHY1MweEgzcTZJNVRvWGIKLS0tLS1FTkQgQ0VSVElGSUNBVEUtLS0tLQo="
+kubernetes_client_key = "LS0tLS1CRUdJTiBFQyBQUklWQVRFIEtFWS0tLS0tCk1JR2tBZ0VCQkREYmNVUGRMb2VzRHZIY3ZrL2VHZFVaRTl4TlNsUVg2QXloUlJ2T0pFeEE1SWQ2b2ZzNm9kVEYKVldQSzhEc0d5UVNnQndZRks0RUVBQ0toWkFOaUFBUk9TdTVud2pBeGVqQTZUVERiSzNvNmxIWGJJTXJxSFBVeQpRcUFpOVZlb2ozTWNhNG1lTVY3RkFpOCsyaXNiYUExNnptSml5ZE5wdUpubmR6dHBncTFxckN2aEtQK0F6RWhXClFBbTY2c1JpRmZOYm5JZTEyK2xwK0dtZDY4bldIZUE9Ci0tLS0tRU5EIEVDIFBSSVZBVEUgS0VZLS0tLS0K"
 kypo_crp_head_version         = "3.1.11"
 kypo_gen_users_version        = "2.0.1"
 kypo_postgres_version         = "2.1.0"
 man_image                     = "debian-11-man-preinstalled"
 os_auth_url                   = "https://10.6.0.52:5000/v3"
 openid_configuration_insecure = true
-proxy_host                    = "10.18.0.43"
-proxy_key = "LS0tLS1CRUdJTiBFQyBQUklWQVRFIEtFWS0tLS0tCk1JR2tBZ0VCQkRDelMwYXdEU3czRjFJN0I3d2tYOWJ1VnVYUG9tWE4xZEhSSDlZUXExWGNVWk1FTUNuQlVpaTEKYXdacmIrQVorVU9nQndZRks0RUVBQ0toWkFOaUFBVHZNdkRDRWRoRnVUdFBISHZGWmM3QVNFZTQwM1FMRkNDRwp3YjdKank2N1lJOEUxaUhUM1VkWEVDdkNyS2c4N2dqT1N1UFRid1JtQnRhUk5TT2dSQXpWL2xoRkZQZjN2cURhCml2WkxXZDc0eS9PWXJnY1NCUVhLOWVLMVhacHdIck09Ci0tLS0tRU5EIEVDIFBSSVZBVEUgS0VZLS0tLS0K"
+proxy_host                    = "10.18.0.67"
+proxy_key = "LS0tLS1CRUdJTiBFQyBQUklWQVRFIEtFWS0tLS0tCk1JR2tBZ0VCQkRBWVl0SEtDRVBIbDlEUWRZMXhST1lkcDB3NVppOCtYdk9scFZSNTEzRGZyUW9vUTZUNEwydVcKLys4TjJJa280UVdnQndZRks0RUVBQ0toWkFOaUFBVHdZY1IvSk5JVUZJRncyYnF0YTk2cURVTm4weEN5b2I1VAp5RU9LcjljZ0NKSkptOUs1ZE5YNjRrMGh6V0FaR0lQbzFSRUEwQkNwTVdBTVAySjJkSHcrZjhEK1JySVI5dWcrCmdOZ1JvYmt6K1ZPNmwyTTZ6UTM0US9rQmk0VTg5WG89Ci0tLS0tRU5EIEVDIFBSSVZBVEUgS0VZLS0tLS0K"
 users = {
     "kypo-admin" = {
-      iss              = "https://fcr.e-dnrs.org/keycloak/realms/KYPO"
-      keycloakUsername = "kypo-admin"
+      iss              = "https://head_host/keycloak/realms/KYPO"
+      keycloakUsername = "kypo-unwe"
       keycloakPassword = "pass123456"
       email            = "admin@example.com"
       fullName         = "Demo Admin"
@@ -65,4 +55,24 @@ users = {
       admin            = true
     }
 }
+```
+Then init terraform for KYPO head sevices.
+```
+terraform init
+```
+And apply the configuration.
+```
+terraform apply -var-file tfvars/deployment.tfvars --auto-approve
+```
+Watch progress in another terminal ...
+```
+kubectl get pod -A -w
+```
+... or ...
+```
+watch kubectl get pod -A
+```
+... or watch events in cluster ...
+```
+kubectl get events -A -w
 ```
