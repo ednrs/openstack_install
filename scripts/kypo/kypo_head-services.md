@@ -76,3 +76,73 @@ watch kubectl get pod -A
 ```
 kubectl get events -A -w
 ```
+## Get access and add certificates
+### Keycloak and Grafana (monitoring)
+Get *Keycloak* and *Grafana* passwords.
+```
+terraform output --json
+```
+the results:
+```
+{
+  "keycloak_password": {
+    "sensitive": true,
+    "type": "string",
+    "value": "fU9FJmTJGAfYDtSe8H04"
+  },
+  "monitoring_admin_password": {
+    "sensitive": true,
+    "type": "string",
+    "value": "XOHM6XyAohk9wqLjeh5X"
+  }
+}
+```
+Open *Keykloak* with following address [https://fcr.e-dnrs.org/keycloak/](https://fcr.e-dnrs.org/keycloak/) and log in with `admin` user.
+You can edit users and other staff in regard to KYPO and Keykloack.
+Monitoring of the cyber range can be found on the address [https://fcr.e-dnrs.org/grafana/](https://fcr.e-dnrs.org/grafana/). Log in with user `admin`.
+
+### Add certificates
+**NB:** This is a workarround. Not stable solution. If you need to stop or to restart the KYPO kubernetes, then you need do the same again.
+KYPO do not use certificates for authentication to the OpenStack, so you need to add OpenStack client certificate to sandbox-service.
+Find the name of the pod
+```
+kubectl get pod -A | grep sandbox-service
+```
+Result:
+```
+kypo           sandbox-service-6dc4bff4dc-rt8s9                         1/1     Running            0               68m
+kypo           sandbox-service-worker-ansible-5d44dbc8cc-4n7g5          1/1     Running            0               50m
+kypo           sandbox-service-worker-default-785c5b9bf8-rz9wr          1/1     Running            0               50m
+kypo           sandbox-service-worker-openstack-86d46cf46f-h6sfk        1/1     Running            0               50m
+kypo           sandbox-service-worker-openstack-86d46cf46f-9vc7l        1/1     Running            0               50m
+kypo           sandbox-service-worker-ansible-5d44dbc8cc-6kx2v          1/1     Running            0               50m
+kypo           sandbox-service-worker-default-785c5b9bf8-ndxdq          1/1     Running            0               50m
+kypo           sandbox-service-worker-ansible-5d44dbc8cc-dt729          1/1     Running            0               49m
+kypo           sandbox-service-worker-default-785c5b9bf8-sb2hq          1/1     Running            0               49m
+kypo           sandbox-service-worker-openstack-86d46cf46f-nd6tb        1/1     Running            0               49m
+kypo           sandbox-service-worker-ansible-5d44dbc8cc-7nnhf          1/1     Running            0               49m
+kypo           sandbox-service-worker-default-785c5b9bf8-lszw8          1/1     Running            0               49m
+kypo           sandbox-service-worker-openstack-86d46cf46f-dhndr        1/1     Running            0               49m
+```
+Copy certificates from the pod.
+```
+kubectl cp sandbox-service-6dc4bff4dc-rt8s9:/etc/ssl/certs/ca-certificates.crt ~/ca-certificates.crt
+```
+Add Openstack client certificate.
+```
+cat /root/snap/openstackclients/common/root-ca.crt >> ~/ca-certificates.crt
+```
+Add new certicate to the sandbox-service pod.
+```
+kubectl cp ~/ca-certificates.crt sandbox-service-6dc4bff4dc-rt8s9:/etc/ssl/certs/ca-certificates.crt
+```
+### Change type of the connection between KYPO's Ansible scripts and Openstack
+**NB:** This is a workarround. Not stable solution. If you need to stop or to restart the KYPO kubernetes, then you need do the same again.
+KYPO uses Ansible for pool creation and these applications do not have access to the Openstack resources. So, you need to setup insecure connection by adding new environment variable.
+```
+kubectl set env deployment/sandbox-service-worker-ansible OS_INSECURE=true
+kubectl set env deployment/sandbox-service-worker-default OS_INSECURE=true
+kubectl set env deployment/sandbox-service-worker-openstack OS_INSECURE=true
+```
+
+Now you are **ready to use the cyber range KYPO**!
