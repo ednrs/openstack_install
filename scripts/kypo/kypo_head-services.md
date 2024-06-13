@@ -33,8 +33,8 @@ guacamole_user_password       = "Ut9ghn7NjaW5VUUhuuH4rA=="
 head_host                     = "fcr.e-dnrs.org"
 head_ip                       = "10.18.0.162"
 kubernetes_host               = "10.18.0.162"
-kubernetes_client_certificate = "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUIyekNDQVdLZ0F3SUJBZ0lSQUtFTDJRZ3Uwa2FIZ1B3dGgvdFlHc013Q2dZSUtvWkl6ajBFQXdNd0dERVcKTUJRR0ExVUVBeE1OYTNWaVpYSnVaWFJsY3kxallUQWVGdzB5TkRBMk1UTXhNREkxTkRGYUZ3MHpOREEyTVRNeQpNakkxTkRGYU1ESXhGekFWQmdOVkJBb1REbk41YzNSbGJUcHRZWE4wWlhKek1SY3dGUVlEVlFRREV3NTBaWEp5CllXWnZjbTB0ZFhObGNqQjJNQkFHQnlxR1NNNDlBZ0VHQlN1QkJBQWlBMklBQkp1SVFrVGErMk9xRTYzRXNGQnYKajY0VnRrUTJ4ellpN3NSeGxmTUxMOWNtczRlWk5qaGpWNkFuRnF2N3N6SE9ySmwyMVd0ak5HeXBwN3JhVi81awpxT3JnekxKOGtOMnNWdkl5K1d3VHk3VDRKaC9tRDBmZXBEWm5pOTBtZGgzWDdLTldNRlF3RGdZRFZSMFBBUUgvCkJBUURBZ1dnTUJNR0ExVWRKUVFNTUFvR0NDc0dBUVVGQndNQ01Bd0dBMVVkRXdFQi93UUNNQUF3SHdZRFZSMGoKQkJnd0ZvQVVQcm90aFpkN3VIWTYyNjJhYjhlNStGK1ZKa0V3Q2dZSUtvWkl6ajBFQXdNRFp3QXdaQUl3WG5ZdQpOQzVSWGZHd1psZFNxNVlVeDI1MEN0SlNneGpHVVE0TW9VemVIRHdmOW44VHoySGdFSW1KN0N2VE5KSFZBakIxCmdBMTd6UXVZTlhSeFR0cGVHL3hNOGp1cktVTkhtaTQvaGVOMHVwM2JYZTE2a01qVlhwcGllY0tzMk5YbjN4WT0KLS0tLS1FTkQgQ0VSVElGSUNBVEUtLS0tLQo="
-kubernetes_client_key = "LS0tLS1CRUdJTiBFQyBQUklWQVRFIEtFWS0tLS0tCk1JR2tBZ0VCQkRBc2hMZWIwZFdkRVZRa0ZwcDBWODVBYWRzelVIdkl0c3pUeTd0eU9nNkNkOUJ4VFNVc2QwbFAKR3NHWTJ1cURmMWVnQndZRks0RUVBQ0toWkFOaUFBU2JpRUpFMnZ0anFoT3R4TEJRYjQrdUZiWkVOc2MySXU3RQpjWlh6Q3kvWEpyT0htVFk0WTFlZ0p4YXIrN014enF5WmR0VnJZelJzcWFlNjJsZitaS2pxNE15eWZKRGRyRmJ5Ck12bHNFOHUwK0NZZjVnOUgzcVEyWjR2ZEpuWWQxK3c9Ci0tLS0tRU5EIEVDIFBSSVZBVEUgS0VZLS0tLS0K"
+kubernetes_client_certificate = "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUIyekNDQVdLZ0F3SUJBZ0lSQUtFTDJRZ3Uwa2FIZ1B3dGgvdFlHc013Q2dZSUtvWkl6ajBFQXdNd0dERVcKTUJRR0ExVUVBeE1OYTNWaVpYSnVaWFJsY3kxallUQWVGdzB5TkRBM>
+kubernetes_client_key = "LS0tLS1CRUdJTiBFQyBQUklWQVRFIEtFWS0tLS0tCk1JR2tBZ0VCQkRBc2hMZWIwZFdkRVZRa0ZwcDBWODVBYWRzelVIdkl0c3pUeTd0eU9nNkNkOUJ4VFNVc2QwbFAKR3NHWTJ1cURmMWVnQndZRks0RUVBQ0toWkFOaUFBU2JpRUpFMnZ0anFoT>
 kypo_crp_head_version         = "3.1.11"
 kypo_gen_users_version        = "2.0.1"
 kypo_postgres_version         = "2.1.0"
@@ -42,7 +42,7 @@ man_image                     = "debian-11-man-preinstalled"
 os_auth_url                   = "https://10.6.0.52:5000/v3"
 openid_configuration_insecure = true
 proxy_host                    = "10.18.0.165"
-proxy_key = "LS0tLS1CRUdJTiBFQyBQUklWQVRFIEtFWS0tLS0tCk1JR2tBZ0VCQkRDU0MxdXNmektEb1NLZ01jaEJFakFFbXM4VWZwekFlVkRaeXFkdEVoVFlDaTg2Yzh6Yml4NUYKbTlPL0xCNnRIUUtnQndZRks0RUVBQ0toWkFOaUFBUitqTWwzUmZqVi91Nk5GWjJxbE8rMjlKK1RlR3NPZEQvMgpsaTVMa3ZaN3V3YVNhRi9VdWFNcld3TytScWtJUm5VNlJsb2hLaVpIMDRrK1h2QW1YN0tnZExwQzNVSml5aUtsCitzcnp4Q2FpV2ZRTGhlTngrMm9Ld01ZeDQwVmY2cUU9Ci0tLS0tRU5EIEVDIFBSSVZBVEUgS0VZLS0tLS0K"
+proxy_key = "LS0tLS1CRUdJTiBFQyBQUklWQVRFIEtFWS0tLS0tCk1JR2tBZ0VCQkRDU0MxdXNmektEb1NLZ01jaEJFakFFbXM4VWZwekFlVkRaeXFkdEVoVFlDaTg2Yzh6Yml4NUYKbTlPL0xCNnRIUUtnQndZRks0RUVBQ0toWkFOaUFBUitqTWwzUmZqVi91Nk5GWjJxbE8rM>
 users = {
     "kypo-admin" = {
       iss              = "https://fcr.e-dnrs.org/keycloak/realms/KYPO"
@@ -88,12 +88,12 @@ the results:
   "keycloak_password": {
     "sensitive": true,
     "type": "string",
-    "value": "fU9FJmTJGAfYDtSe8H04"
+    "value": "kPLSzv5mSNWGBgCtfVIU"
   },
   "monitoring_admin_password": {
     "sensitive": true,
     "type": "string",
-    "value": "XOHM6XyAohk9wqLjeh5X"
+    "value": "yWuC5mJOeAoNu8Bzxpun"
   }
 }
 ```
